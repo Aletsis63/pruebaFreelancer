@@ -1,0 +1,157 @@
+
+:root{/*estos dos puntos significan que es un pseudelemento porue no existe en el html pero sirve para definir cosas*/
+    --blanco:#FFFFFF;
+    --oscuro:#212121;
+    --primario:#FFC107;
+    --secundario:#0097A7;
+    --gris:#757575;
+    --grisClaro:#DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+/*GLOBALES*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;/*sirve para seleccionar todos los elementos y a la hora de poner un pading no te cambie el tamaño*/
+}
+*, *::before, *:after{/*sirve para seleccionar todos los elementos y a la hora de poner un pading no te cambie el tamaño*/
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;/*declarar este es para que s eaplique en todo el body*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin-top: 0;/*para que haya separacion*/
+    margin-right: auto;
+    margin-bottom: 0;/*para que haya separacion de abajo*/
+    margin-left: auto;
+
+    margin: 0 auto;/*esto es lo mismo que las anteriores lineas pero en una sola no las borrare solo por el ejemplo*/
+}
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+    
+}
+.sombra{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(163,153,163,0.6);
+-moz-box-shadow: 10px 10px 5px 0px rgba(163,153,163,0.6);
+box-shadow: 10px 10px 5px 0px rgba(163,153,163,0.6);
+background-color: var(--blanco);
+padding: 2rem;
+border-radius: 1rem;
+
+}
+/*tIPOGRAFIA*/
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+/*LAS DOS LINEAS ANTERIORES LO QUE PERMITEN ES ADPATAR LOS REM PARA MUCHAS PANTALLAS CON UNA ALTA DENSIDAD 1 REM = 10PX*/
+/*tambien estan los id #titulo y tienen que ser diferentes son unicos no son tan recomendados*/
+
+/*TITULOS*/
+.titulo span{/*ESTE SIRVE PARA SOLO SELECCIONAR EL SPAN QUE ESTA EN EL h1 porque estamos usando la especifidad ES .h1*/
+    font-size: 2rem;
+    
+}
+
+
+/*NAVEGACION PRINCIPAL*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+
+    display: flex;
+   flex-direction: column;
+    
+    align-items: center;/*esto sirve para alinear en las columnas*/
+}
+@media (min-width: 768px ) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+   font-size: 2rem;
+   font-weight:700;
+   padding: 1rem;/*este es para engordar la barra*/
+
+    /*display: block; este codigo sirve para especificarle en donde se acomodan los botones*/
+    
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+
+    
+}
+/*HERO*/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.contenido-hero {
+    position:absolute;
+    background-color: rgb(0,0,0, .7);/*el .7es para la transperencia*/
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+/*
+.titulo span{/*ESTE SIRVE PARA SOLO SELECCIONAR EL SAPN QUE ESTA EN EL h2 porque en este no uso especifidad
+    font-size: 2rem;
+    color: red;
+}
+*/
